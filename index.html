@@ -7,137 +7,308 @@
     <title>Onkar's Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        * {
+        body.dark-theme {
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+
+        body.light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            background-color: rgb(0, 0, 33);
-            color: white;
-            font-family: 'Poppins', sans-serif;
-        }
-
         nav {
+            background-color: rgb(18, 18, 62);
             display: flex;
             justify-content: space-around;
             align-items: center;
             height: 80px;
+        }
+
+        body.light-theme nav {
             background-color: rgb(18, 18, 62);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            list-style: none;
-            margin: 0 23px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
             color: white;
         }
 
-        nav ul li a:hover {
-            color: rgb(86, 86, 175);
-        }
-
-        .left {
+        #nav {
+            color: white;
             font-size: 1.5rem;
         }
 
-        .firstSection {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin: 110px 0;
+        body.light-theme #nav {
+            color: white;
         }
 
-        .firstSection>div {
-            width: 30%;
+        body.light-theme nav a {
+            color: white;
         }
 
-        .leftSection {
-            font-size: 2.5rem;
-            /* margin: 20px 0; */
+        body.light-theme .fas {
+            color: white;
         }
 
-        .rightSection img {
-            width: 80%;
-            /* margin: 50px 0; */
+        .nav-link {
+            color: white;
+            margin: 0 17px;
+        }
+
+        nav a:hover {
+            color: rgb(86, 86, 175);
+        }
+
+        .fa-sun,
+        .fa-moon:hover {
+            color: rgb(86, 86, 175);
         }
 
         .purple {
             color: rgb(170, 107, 228);
         }
 
-        .secondSection {
-            max-width: 80vw;
-            margin: auto;
+        .rightSection img {
+            width: 80%;
+            height: auto;
         }
 
-        main hr {
-            border: 0;
+        hr {
             background: rgb(153, 153, 226);
             height: 1.2px;
-            margin: 40px 84px;
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        body.light-theme .theme-toggle-btn {
+            color: black;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        body.light-theme .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        body.light-theme .navbar-collapse {
+            background-color: rgb(18, 18, 62);
+        }
+
+        body.light-theme .navbar-collapse a {
+            color: white;
+        }
+
+        body.dark-theme .navbar-collapse {
+            background-color: rgb(18, 18, 62);
+        }
+
+        body.dark-theme .navbar-collapse a {
+            color: white;
+        }
+
+        body.dark-theme .navbar-collapse a:hover {
+            color: rgb(86, 86, 175);
+        }
+
+        .links {
+            text-align: center;
+            position: relative;  
+        }
+
+        .nav-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        body.light-theme .nav-list li a {
+            color: black;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .nav-link:hover {
+            color: rgb(86, 86, 175);
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            /* color: white; */
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .navbar-toggler-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(18, 18, 62, 0.9);
+                z-index: 1000;
+            }
+
+            body.light-theme .nav-list li a {
+                color: white;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .nav-list.open {
+                display: flex;
+            }
         }
     </style>
 </head>
 
-<body>
-    <header class="">
-        <nav>
-            <div class="left">Onkar's Portfolio</div>
-            <div class="right">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Projects</a></li>
-                    <li><a href="/">Contact Me</a></li>
-                </ul>
+<body class="dark-theme">
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+                <a class="navbar-brand" id="nav" href="#">Onkar's Portfolio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto" id="ul">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#">Services</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
+                    </ul>
+                    <button class="theme-toggle-btn ms-3" id="themeToggleBtn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
         </nav>
+
+        <div class="links">
+            <button class="navbar-toggler" id="navbar-toggler">
+                <!-- <span class="navbar-toggler-icon">&#9776;</span> -->
+                <span><i class="fa-solid fa-link"></i></span>
+            </button>
+            <ul class="nav-list" id="nav-list">
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/onkarijare/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/Onkar2104"><i class="fa-brands fa-github"></i> GitHub</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#">Services</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="https://x.com/OIjare"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="mailto:ijareonkar2184@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#"><i class="fa-brands fa-threads"></i> Threads</a></li> -->
+            </ul>
+        </div>
+
     </header>
 
-    <main>
-        <section class="firstSection">
-            <div class="leftSection">
-                Hi, My name is <span class="purple">Harry</span>
-                <div>And I am a passionate</div>
-                <span id="element"></span>
+    <main class="container my-5">
+        <section class="row align-items-center text-center text-md-start">
+            <div class="col-12 col-md-6">
+                <h1>Hello,</h1>
+                <h1>I'm <span class="purple">Onkar Ijare</span></h1>
+                <h2>A passionate <span id="element"></span></h2>
+                </h2>
+                <h2><span id="element"></span></h2>
             </div>
-
-            <div class="rightSection">
-                <img src="bg.png" alt="">
-                <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDCcpluLnXTTwm0MibtXIRPKMorXN2AfmEmg&s" alt=""> -->
+            <div class="col-12 col-md-6 rightSection">
+                <img src="bg.png" alt="Profile Image" class="img-fluid my-3">
             </div>
         </section>
 
         <hr>
 
-        <section class="secondSection">
-            <h3>Past Experience</h1>
+        <section class="secondSection" id="experience">
+            <h3 class="text-center">Work Experience</h3>
         </section>
     </main>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['Python Developer.', 'Django Developer.'],
-            typeSpeed: 50,
+            strings: ['Python Developer.', 'Django Developer.', 'Full Stack Developer.'],
+            typeSpeed: 100,
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+        const icon = themeToggleBtn.querySelector('i');
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            body.classList.toggle('light-theme');
+
+            if (body.classList.contains('light-theme')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        const navbarToggler = document.getElementById('navbar-toggler');
+        const navList = document.getElementById('nav-list');
+
+        navbarToggler.addEventListener('click', () => {
+            navList.classList.toggle('open');
+        });
+
+    </script>
+
+
 </body>
 
 </html>
