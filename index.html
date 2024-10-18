@@ -35,7 +35,10 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            height: 80px;
+            /* height: 80px; */
+            position: sticky;
+            top: 0;
+            overflow: hidden;
         }
 
         body.light-theme nav {
@@ -130,7 +133,7 @@
 
         .links {
             text-align: center;
-            position: relative;  
+            position: relative;
         }
 
         .nav-list {
@@ -177,6 +180,263 @@
             cursor: pointer;
         }
 
+        .secondSection,
+        .thirdSection,
+        .fourthSection,
+        .fifthSection {
+            margin-top: 40px;
+        }
+
+        .work,
+        .projects {
+            align-items: center;
+            /* justify-content: space-between; */
+            justify-content: space-around;
+            /* justify-content: center; */
+            position: relative;
+            /* text-align: center; */
+            display: flex;
+            flex-wrap: wrap;
+            /* margin-top: 30px; */
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .work {
+            max-height: 350px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .work::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .work {
+                max-height: 300px;
+            }
+        }
+
+
+        .card {
+            width: 25rem;
+            background-color: rgb(28, 28, 63);
+            color: white;
+            /* position: relative; */
+        }
+
+        .card:hover {
+            box-shadow: 1px 1px 7px lightblue;
+        }
+
+        .card-subtitle {
+            opacity: 0.5;
+        }
+
+        .card-link {
+            color: white;
+            text-decoration: none;
+            padding: 4px 4px 4px 4px;
+            background-color: rgb(86, 86, 175);
+            /* border: 2px solid rgb(86, 86, 175); */
+            border-radius: 3px;
+        }
+
+        body.light-theme .card {
+            background-color: white;
+            color: black;
+        }
+
+        body.light-theme .card-link {
+            color: black;
+        }
+
+        .img-custom-size {
+            width: 50%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .modal-content {
+            background-color: rgb(28, 28, 63);
+        }
+
+        body.light-theme .modal-content {
+            background-color: white;
+        }
+
+        .projects {
+            max-height: 500px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .img-custom-size {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .projects::-webkit-scrollbar {
+            display: none;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap; 
+            gap: 30px;
+            padding: 20px;
+            overflow-x: auto; 
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; 
+        }
+
+        .skills-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .skill {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            min-width: 250px;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+        }
+
+        .skillss{
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .progress-info .circle {
+            width: 50px;
+            height: 50px;
+            background-color: #4caf50;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2em;
+        }
+
+        .progress-info h3{
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #4caf50;
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        .track-line-container {
+            position: relative;
+            margin-top: 10px;
+            height: 5px;
+            background-color: #ddd;
+            border-radius: 2.5px;
+            overflow: hidden;
+        }
+
+        .track-line {
+            height: 100%;
+            background-color: #4caf50;
+            width: 0; 
+            transition: width 0.3s ease-out;
+        }
+
+        @media (max-width: 576px) {
+            .track-line-container {
+                display: block; 
+            }
+        }
+
+        @media (min-width: 577px) {
+            .track-line-container {
+                display: none; 
+            }
+        }
+
+        #tools {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #tools h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            /* color: #34495e; */
+        }
+
+        .tools-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .tool {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tool:hover {
+            transform: translateY(-10px);
+        }
+
+        .tool img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .tool h3 {
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
         @media (max-width: 768px) {
             .nav-list {
                 display: none;
@@ -204,13 +464,19 @@
             .nav-list.open {
                 display: flex;
             }
+
+            .card {
+                margin-top: 20px;
+                width: 350px;
+            }
+
         }
     </style>
 </head>
 
 <body class="dark-theme">
     <header>
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md sticky-top" id="home">
             <div class="container">
                 <a class="navbar-brand" id="nav" href="#OnkarIjare">Onkar's Portfolio</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -219,12 +485,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto" id="ul">
-                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#">Services</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact Me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
                     </ul>
                     <button class="theme-toggle-btn ms-3" id="themeToggleBtn">
                         <i class="fas fa-moon"></i>
@@ -235,17 +500,20 @@
 
         <div class="links">
             <button class="navbar-toggler" id="navbar-toggler">
-                <!-- <span class="navbar-toggler-icon">&#9776;</span> -->
                 <span><i class="fa-solid fa-link"></i></span>
             </button>
             <ul class="nav-list" id="nav-list">
-                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/onkarijare/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/onkarijare/"><i
+                            class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="https://github.com/Onkar2104"><i class="fa-brands fa-github"></i> GitHub</a></li>
-                <!-- <li class="nav-item"><a class="nav-link" href="#">Services</a></li> -->
-                <li class="nav-item"><a class="nav-link" href="https://x.com/OIjare"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                <li class="nav-item"><a class="nav-link" href="mailto:ijareonkar2184@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a></li>
-                <li class="nav-item"><a class="nav-link" href="whatsapp://send?phone=9420734956"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/Onkar2104"><i
+                            class="fa-brands fa-github"></i> GitHub</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://x.com/OIjare"><i
+                            class="fa-brands fa-twitter"></i> Twitter</a></li>
+                <li class="nav-item"><a class="nav-link" href="mailto:ijareonkar2184@gmail.com"><i
+                            class="fa-solid fa-envelope"></i> Email</a></li>
+                <li class="nav-item"><a class="nav-link" href="whatsapp://send?phone=9420734956"><i
+                            class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
             </ul>
         </div>
 
@@ -269,18 +537,450 @@
 
         <section class="secondSection" id="experience">
             <h3 class="text-center">Work Experience</h3>
+            <div class="work">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#workModal1">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Developement Intern</h5>
+                        <h6 class="card-subtitle mb-2">Codespaze - Oct 2024 to Present</h6>
+                        <p class="card-text">
+                        <ul>
+                            <li>Responsible for designing Django-based RESTful APIs.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/codespaze_internship/tree/main/restapi"
+                            class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#workModal2">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Developement Intern</h5>
+                        <h6 class="card-subtitle mb-2">Shreevidya Info - Jan 2024 to Feb 2024</h6>
+                        <p class="card-text">
+                        <ul>
+                            <li>Worked on a bank management system</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="workModal1" tabindex="-1" aria-labelledby="workModalLabel1"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="workModalLabel1">CodeSpaze Intern</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a more detailed description of the project...</p>
+                                <ul>
+                                    <li>Enabled CRUD operations.</li>
+                                    <li>Ensured secure access.</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Onkar2104/codespaze_internship/tree/main/restapi"
+                                    class="btn btn-primary">View on
+                                    GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="workModal2" tabindex="-1" aria-labelledby="workModalLabel2"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="workModalLabel2">Shreevidya Infotechnologies Intern</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>This is a more detailed description of the project...</p>
+                                <ul>
+                                    <li>Wrote frontend & backend code for building a bank management system</li>
+                                    <li>Worked on CRUD operations</li>
+                                    <li>Enabled secure data storing</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <a href="https://github.com/Onkar2104" class="btn btn-primary">View on
+                                    GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Projects -->
+
+        <section class="thirdSection" id="projects">
+            <h3 class="text-center">My Projects</h3>
+            <div class="projects" id="projects">
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                    <img src="logo3.png" class="card-img-top img-custom-size" alt="library">
+                    <div class="card-body">
+                        <h5 class="card-title">The Scholar's Haven</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>Built a full-stack library system with Django,SQLite to manage books, students.
+                            </li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Django_Library" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                    <img src="https://www.shutterstock.com/image-vector/currency-exchange-money-conversion-euro-600nw-2169800853.jpg"
+                        class="card-img-top img-custom-size" alt="currency converter">
+                    <div class="card-body">
+                        <h5 class="card-title">Currency Converter</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>Developed a web-based currency converter using HTML, CSS, and JavaScript.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Currency_Converter" class="btn btn-primary">View on
+                            GitHub</a>
+                        <a href="https://onkar2104.github.io/currency_converter/" class="btn btn-primary">Visit Site <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                    <img src="https://miro.medium.com/v2/resize:fit:1400/1*hPhzeFD3htF7ly1AMmAVbw.png"
+                        class="card-img-top img-custom-size" alt="currency converter">
+                    <div class="card-body">
+                        <h5 class="card-title">Rock Paper Scissors</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>This is a simple and interactive Rock-Paper-Scissors game built using HTML, CSS, and
+                                JavaScript.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Rock_Paper_Scissors" class="btn btn-primary">View on
+                            GitHub</a>
+                        <a href="https://onkar2104.github.io/Rock_Paper_Scissors/" class="btn btn-primary">Visit Site <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-ZnDw4x6UlwW6qrAekdgMdAEZ6GD2skddg&s"
+                        class="card-img-top img-custom-size" alt="currency converter">
+                    <div class="card-body">
+                        <h5 class="card-title">Rock Paper Scissors</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>This simple yet engaging project allows two players to take turns marking 'X' or 'O' on
+                                a 3x3 grid.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Tic-Tac-Toe" class="btn btn-primary">View on
+                            GitHub</a>
+                        <a href="https://onkar2104.github.io/Tic-Tac-Toe/" class="btn btn-primary">Visit Site <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8WU0Emt19dyXiCPIuhVtxIFbqx13mkj54hA&s"
+                        class="card-img-top img-custom-size" alt="currency converter">
+                    <div class="card-body">
+                        <h5 class="card-title">Amazon Clone</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>A simple amazon.com clone with fully mobile view responsive developed using HTML, CSS,
+                                JavaScript.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Amazon-Clone" class="btn btn-primary">View on
+                            GitHub</a>
+                        <!-- <a href="https://onkar2104.github.io/Tic-Tac-Toe/" class="btn btn-primary">Visit Site <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+
+                <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd-eHyIHkbiQ428WtDUb7s6dFnDK3CQ7YQog&s"
+                        class="card-img-top img-custom-size" alt="currency converter">
+                    <div class="card-body">
+                        <h5 class="card-title">Spotify Clone</h5>
+                        <p class="card-text">
+                        <ul>
+                            <li>A simple spotify.com clone with fully mobile view responsive developed using HTML, CSS,
+                                JavaScript.</li>
+                        </ul>
+                        </p>
+                        <a href="https://github.com/Onkar2104/Spotify-Clone" class="btn btn-primary">View on
+                            GitHub</a>
+                        <!-- <a href="https://onkar2104.github.io/Tic-Tac-Toe/" class="btn btn-primary">Visit Site <i
+                                class="fa-solid fa-arrow-up-right-from-square"></i></a> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODAL -->
+
+            <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel1">The Scholar's Haven</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is a more detailed description of the project...</p>
+                            <ul>
+                                <li>Full-stack library management system built with Django.</li>
+                                <li>Implemented user authentication with role-based access (Admin and Student).</li>
+                                <li>Created a dynamic dashboard for tracking books, users, and borrowing history.</li>
+                                <li>Integrated RESTful APIs for easy CRUD operations on books and students.</li>
+                                <li>Added curated daily news updates from sources like The Indian Express.</li>
+                                <li>Optimized performance with SQLite and responsive design using Bootstrap.</li>
+                                <li>Secured the system with robust encryption and Django’s security features.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="https://github.com/Onkar2104/Django_Library" class="btn btn-primary">View on
+                                GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel2">Currency Converter</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is a more detailed description of the project...</p>
+                            <ul>
+                                <li>Web-based currency converter using real-time exchange rates via external APIs.</li>
+                                <li>Implemented interactive UI with dynamic currency selection and flags.</li>
+                                <li>Designed with HTML, CSS, and Bootstrap for a responsive user interface.</li>
+                                <li>Used JavaScript to fetch and display currency exchange data dynamically.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="https://github.com/Onkar2104/Currency_Converter" class="btn btn-primary">View on
+                                GitHub</a>
+                            <a href="https://onkar2104.github.io/currency_converter/" class="btn btn-primary">Visit Site
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel3">Rock Paper Scissors</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is a more detailed description of the project...</p>
+                            <ul>
+                                <li>Real-time score updates after each round.</li>
+                                <li>Visual feedback to show the player’s and computer’s choices.</li>
+                                <li>A user-friendly interface with animations and CSS styling.</li>
+                                <li>A reset option to start a new game.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="https://github.com/Onkar2104/Rock_Paper_Scissors" class="btn btn-primary">View on
+                                GitHub</a>
+                            <a href="https://onkar2104.github.io/Rock_Paper_Scissors/" class="btn btn-primary">Visit
+                                Site
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="projectModal4" tabindex="-1" aria-labelledby="projectModalLabel4"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projectModalLabel4">Tic Tac Toe</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is a more detailed description of the project...</p>
+                            <ul>
+                                <!-- <li>Real-time score updates after each round.</li> -->
+                                <li>A classic two-player game built using [insert technology: HTML, CSS, JavaScript,
+                                    etc.].</li>
+                                <li>Winning Detection: Automatically checks for winning combinations after each move.
+                                </li>
+                                <li>Restart Option: Allows users to reset the game and play again.</li>
+                                <li>Draw Detection: Identifies a tie when all spaces are filled without a winner.</li>
+                                <li>Player Turn Indicator: Highlights the current player's turn.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <a href="https://github.com/Onkar2104/Tic-Tac-Toe" class="btn btn-primary">View on
+                                GitHub</a>
+                            <a href="https://onkar2104.github.io/Tic-Tac-Toe/" class="btn btn-primary">Visit
+                                Site
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Skills Section -->
+        <section class="fourthSection" id="skills">
+            <h3 class="text-center">My Skills</h3>
+            <div class="skillss">
+                <div class="skills-container">
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">90%</div>
+                            <h3>HTML</h3>
+                        </div>
+                        <div class="progress-bar" id="fBar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">80%</div>
+                            <h3>CSS</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">70%</div>
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">75%</div>
+                            <h3>Python</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">70%</div>
+                            <h3>Django</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">70%</div>
+                            <h3>Java</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="progress-info">
+                            <div class="circle">60%</div>
+                            <h3>MySQL</h3>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Track line for scroll progress -->
+            <div class="track-line-container">
+                <div class="track-line" id="trackLine"></div>
+            </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Tools -->
+
+        <section class="fifthSection" id="skills">
+            <h3 class="text-center">Tools I use</h3>
+            <div class="tools-container">
+                <div class="tool">
+                    <img src="https://yt3.googleusercontent.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj" alt="Python">
+                    <h3>VS Code</h3>
+                </div>
+                <div class="tool">
+                    <img src="https://storage.caktusgroup.com/media/blog-images/logo.png" alt="Django">
+                    <h3>PyCharm</h3>
+                </div>
+                <div class="tool">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <h3>Git</h3>
+                </div>
+                <div class="tool">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" alt="HTML">
+                    <h3>GitHub</h3>
+                </div>
+                <div class="tool">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHa691HLB5Obvv7ygL6koWYQw5ypRzNP8Z5Q&s" alt="CSS3">
+                    <h3>MySQL</h3>
+                </div>
+                <div class="tool">
+                    <img src="https://logowik.com/content/uploads/images/zoom-icon8997.jpg" alt="JavaScript">
+                    <h3>Zoom</h3>
+                </div>
+            </div>
         </section>
     </main>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
-            strings: ['Python Developer.', 'Django Developer.', 'Full Stack Developer.'],
+            strings: ['Full Stack Developer.'],
             typeSpeed: 100,
         });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         const themeToggleBtn = document.getElementById('themeToggleBtn');
@@ -305,6 +1005,29 @@
 
         navbarToggler.addEventListener('click', () => {
             navList.classList.toggle('open');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressBars = document.querySelectorAll('.progress');
+
+            progressBars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 300);  
+            });
+        });
+
+        const skillsContainer = document.getElementById('skillsContainer');
+        const trackLine = document.getElementById('trackLine');
+
+        skillsContainer.addEventListener('scroll', function () {
+            const containerWidth = skillsContainer.scrollWidth - skillsContainer.clientWidth;
+            const scrollPercentage = (skillsContainer.scrollLeft / containerWidth) * 100;
+
+            trackLine.style.width = scrollPercentage + '%';
         });
 
     </script>
