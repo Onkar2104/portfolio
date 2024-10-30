@@ -1140,11 +1140,11 @@
             }
         });
 
-        const navbarToggler = document.getElementById('navbar-toggler');
+        const navbarToggler = document.getElementsByClassName('navbar-toggler');
         const navList = document.getElementById('nav-list');
 
         navbarToggler.addEventListener('click', () => {
-            navList.classList.toggle('active');
+            navList.classList.toggle('open');
         });
 
         document.addEventListener('DOMContentLoaded', () => {
