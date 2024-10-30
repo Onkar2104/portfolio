@@ -183,7 +183,8 @@
         .secondSection,
         .thirdSection,
         .fourthSection,
-        .fifthSection {
+        .fifthSection,
+        .sixSection {
             margin-top: 40px;
         }
 
@@ -295,12 +296,12 @@
         .skills-container {
             display: flex;
             justify-content: space-between;
-            flex-wrap: nowrap; 
+            flex-wrap: nowrap;
             gap: 30px;
             padding: 20px;
-            overflow-x: auto; 
+            overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; 
+            scrollbar-width: none;
         }
 
         .skills-container::-webkit-scrollbar {
@@ -322,7 +323,7 @@
             transform: translateY(-10px);
         }
 
-        .skillss{
+        .skillss {
             margin-top: 30px;
             margin-bottom: 40px;
         }
@@ -345,7 +346,7 @@
             font-size: 1.2em;
         }
 
-        .progress-info h3{
+        .progress-info h3 {
             font-size: 1.5rem;
             color: black;
         }
@@ -377,19 +378,19 @@
         .track-line {
             height: 100%;
             background-color: #4caf50;
-            width: 0; 
+            width: 0;
             transition: width 0.3s ease-out;
         }
 
         @media (max-width: 576px) {
             .track-line-container {
-                display: block; 
+                display: block;
             }
         }
 
         @media (min-width: 577px) {
             .track-line-container {
-                display: none; 
+                display: none;
             }
         }
 
@@ -437,6 +438,59 @@
             color: #2c3e50;
         }
 
+        .resume {
+            display: flex;
+        }
+
+
+        body.light-theme .resume img {
+            border: 2px solid rgb(28, 28, 63);
+        }
+
+        .resume img {
+            width: 650px;
+            height: 770px;
+        }
+
+        .download {
+            margin-left: 170px;
+            margin-top: 200px;
+        }
+
+        .download p {
+            margin-top: 20px;
+        }
+
+        .sixSection .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .image {
+            margin-top: 30px;
+            margin-left: 30px;
+            display: flex;
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+
+        .image img {
+            width: 300px;
+            height: auto;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .about {
+            flex: 1;
+        }
+
+
+
         @media (max-width: 768px) {
             .nav-list {
                 display: none;
@@ -470,6 +524,44 @@
                 width: 350px;
             }
 
+            .resume img {
+                width: 150px;
+                height: auto;
+            }
+
+            .download {
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+            .download h2 {
+                font-size: 1rem;
+            }
+
+            .download p {
+                margin-top: 20px;
+                font-size: 0.9rem;
+            }
+
+            .image img {
+                width: 120px;
+                height: auto;
+            }
+
+            .sixSection .container {
+                display: grid;
+                margin-left: 20px;
+                /* margin-right: 500px; */
+            }
+
+            .image img{
+                margin-left: 80px;
+            }
+
+            .about{
+                text-align: center;
+            }
+
         }
     </style>
 </head>
@@ -489,7 +581,8 @@
                         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#aboutMe">About Me</a></li>
                     </ul>
                     <button class="theme-toggle-btn ms-3" id="themeToggleBtn">
                         <i class="fas fa-moon"></i>
@@ -534,6 +627,16 @@
         </section>
 
         <hr>
+        <!-- <div class="resume">
+            <a href="OnkarIjareResumeDownload.pdf" download><img src="OnkarIjareResume.jpg"></a>
+            <div class="download">
+                <h2>"Download My Resume"</h2>
+                <p>For a detailed look at my experience, skills, and accomplishments, <a
+                        href="OnkarIjareResumeDownload.pdf" download>download</a> my resume .</p>
+            </div>
+        </div>
+
+        <hr> -->
 
         <section class="secondSection" id="experience">
             <h3 class="text-center">Work Experience</h3>
@@ -930,9 +1033,9 @@
                     </div>
                 </div>
                 <!-- Track line for scroll progress -->
-            <div class="track-line-container">
-                <div class="track-line" id="trackLine"></div>
-            </div>
+                <div class="track-line-container">
+                    <div class="track-line" id="trackLine"></div>
+                </div>
             </div>
         </section>
 
@@ -944,7 +1047,8 @@
             <h3 class="text-center">Tools I use</h3>
             <div class="tools-container">
                 <div class="tool">
-                    <img src="https://yt3.googleusercontent.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj" alt="Python">
+                    <img src="https://yt3.googleusercontent.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s900-c-k-c0x00ffffff-no-rj"
+                        alt="Python">
                     <h3>VS Code</h3>
                 </div>
                 <div class="tool">
@@ -956,11 +1060,13 @@
                     <h3>Git</h3>
                 </div>
                 <div class="tool">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" alt="HTML">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+                        alt="HTML">
                     <h3>GitHub</h3>
                 </div>
                 <div class="tool">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHa691HLB5Obvv7ygL6koWYQw5ypRzNP8Z5Q&s" alt="CSS3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHa691HLB5Obvv7ygL6koWYQw5ypRzNP8Z5Q&s"
+                        alt="CSS3">
                     <h3>MySQL</h3>
                 </div>
                 <div class="tool">
@@ -969,6 +1075,40 @@
                 </div>
             </div>
         </section>
+
+        <hr>
+
+        <div class="resume" id="resume">
+            <a href="OnkarIjareResumeDownload.pdf" download><img src="OnkarIjareResume.jpg"></a>
+            <div class="download">
+                <h2>"Download My Resume"</h2>
+                <p>For a detailed look at my experience, skills, and accomplishments, <a
+                        href="OnkarIjareResumeDownload.pdf" download>download</a> my resume .</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <section class="sixSection" id="aboutMe">
+            <div class="container">
+                <div class="image">
+                    <img src="pic.png">
+                </div>
+                <div class="about">
+                    <h1>Onkar Ijare</h1>
+                    <p>Python Developer with a strong foundation in Django and RESTful API development, currently
+                        excelling in a BTech program alongside a developer role at Codespaze. Skilled in full-stack
+                        development with expertise in HTML, CSS, JavaScript, and Bootstrap, and adept in building
+                        responsive, user-centered applications. Experienced with database management, version control,
+                        and third-party API integration, including a recent addition of news APIs for real-time updates.
+                        Known for a commitment to clean, scalable code, and a proven ability to balance academic
+                        pursuits with professional development.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
     </main>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
@@ -1016,7 +1156,7 @@
 
                 setTimeout(() => {
                     bar.style.width = targetWidth;
-                }, 300);  
+                }, 300);
             });
         });
 
