@@ -516,7 +516,7 @@
         }
 
         .resume img {
-            width: 650px;
+            width: 600px;
             height: 770px;
         }
 
@@ -630,6 +630,67 @@
                 text-align: center;
             }
 
+        }
+
+        /* Contact Form Container */
+        .contact-container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Heading */
+        .contact-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .send {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .send:hover {
+            background: #218838;
+        }
+
+        /* Textarea */
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        #status {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .contact-container {
+                width: 95%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -1142,11 +1203,11 @@
         <hr>
 
         <div class="resume" id="resume">
-            <a href="OnkarIjareResumeDownload.pdf" download><img src="OnkarIjareResume.jpg"></a>
+            <a href="Resume1.pdf" download><img src="Resume1.jpg"></a>
             <div class="download">
                 <h2>"Download My Resume"</h2>
                 <p>For a detailed look at my experience, skills, and accomplishments, <a
-                        href="OnkarIjareResumeDownload.pdf" download>download</a> my resume .</p>
+                        href="Resume1.pdf" download>download</a> my resume .</p>
             </div>
         </div>
 
@@ -1172,10 +1233,55 @@
 
         <hr>
 
+        <section class="sevenSection" id="contact">
+            <form id="contactForm">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" id="send-button" class="send">Send</button>
+                <p id="status"></p>
+            </form>
+        </section>
+
+        <hr>
+
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("ypxJS5ImiXL8Z99Uq"); // Replace with your actual EmailJS User ID
+        })();
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const sendButton = document.getElementById("send-button");
+            sendButton.disabled = true;
+            sendButton.innerText = "Sending...";
+
+            emailjs.send("service_78o7s6g", "template_nvs4f71", {
+                from_name: document.getElementById("name").value,
+                from_email: document.getElementById("email").value,
+                message: document.getElementById("message").value
+            }).then(
+                function(response) {
+                    alert("Email Sent Successfully!");
+                    document.getElementById("contactForm").reset();
+                },
+                function(error) {
+                    alert("Failed to send email. Please try again.");
+                }
+            ).finally(() => {
+                sendButton.disabled = false;
+                sendButton.innerText = "Send";
+            });
+        });
+    </script>
+
     <script>
         var typed = new Typed('#element', {
             strings: ['Full Stack Developer.'],
