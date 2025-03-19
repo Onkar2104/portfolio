@@ -10,12 +10,12 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 - **Resume** – Download or view my latest resume.  
 - **Contact** – Easily connect with me via email or social media links.  
 
-## 🛠️ Built With  
+<!-- ## 🛠️ Built With  
 
 - **Frontend**: HTML, CSS, Bootstrap, JavaScript  
 - **Backend**: Django (Python)  
 - **Database**: SQLite (or PostgreSQL for deployment)  
-- **Hosting**: Deployed on AWS EC2  
+- **Hosting**: Deployed on AWS EC2  -->
 
 <!-- ## 📷 Preview  
 
