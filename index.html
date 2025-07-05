@@ -1250,37 +1250,7 @@
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("ypxJS5ImiXL8Z99Uq"); // Replace with your actual EmailJS User ID
-        })();
-
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const sendButton = document.getElementById("send-button");
-            sendButton.disabled = true;
-            sendButton.innerText = "Sending...";
-
-            emailjs.send("service_78o7s6g", "template_nvs4f71", {
-                from_name: document.getElementById("name").value,
-                from_email: document.getElementById("email").value,
-                message: document.getElementById("message").value
-            }).then(
-                function(response) {
-                    alert("Email Sent Successfully!");
-                    document.getElementById("contactForm").reset();
-                },
-                function(error) {
-                    alert("Failed to send email. Please try again.");
-                }
-            ).finally(() => {
-                sendButton.disabled = false;
-                sendButton.innerText = "Send";
-            });
-        });
-    </script>
+   
 
     <script>
         var typed = new Typed('#element', {
